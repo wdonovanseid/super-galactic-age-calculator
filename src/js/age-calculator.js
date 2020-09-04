@@ -13,6 +13,7 @@ export class GalacticAge {
     this.venusAgeAvg;
     this.marsAgeAvg;
     this.jupAgeAvg;
+    this.mayflyAge = userAge * 105120 / 4603000000;
   }
 
   calcAvg() {

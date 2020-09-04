@@ -34,6 +34,7 @@ function displayGalInfo(userGalAge) {
   } else {
     $("#jupAgeAvg").text(`You have ${userGalAge.jupAgeAvg} years left to live.`);
   }
+  $("#mayflyAge").text(userGalAge.mayflyAge);
 }
 
 function attachListeners() {
@@ -47,19 +48,29 @@ function attachListeners() {
     $("#merc-info").hide();
     $("#mars-info").hide();
     $("#jup-info").hide();
+    $("#mayfly-info").hide();
     $("#venus-info").toggle();
   });
   $("button#mars").on("click", function() {
     $("#merc-info").hide();
     $("#venus-info").hide();
     $("#jup-info").hide();
+    $("#mayfly-info").hide();
     $("#mars-info").toggle();
   });
   $("button#jup").on("click", function() {
     $("#merc-info").hide();
     $("#venus-info").hide();
     $("#mars-info").hide();
+    $("#mayfly-info").hide();
     $("#jup-info").toggle();
+  });
+  $("button#jup").on("click", function() {
+    $("#merc-info").hide();
+    $("#venus-info").hide();
+    $("#mars-info").hide();
+    $("#jup-info").hide();
+    $("#mayfly-info").toggle();
   });
 }
 

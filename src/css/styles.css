@@ -1,9 +1,9 @@
-#output, #merc-info, #venus-info, #mars-info, #jup-info {
+#output, #merc-info, #venus-info, #mars-info, #jup-info, #mayfly-info {
   display: none;
 }
 
 img {
-  width: 45%;
+  width: 35%;
   height: auto;
 }
 
@@ -28,6 +28,6 @@ body {
 .card {
   background-color: black;
   border: 5px solid white;
-  opacity: 0.6;
+  opacity: 0.8;
   color: white;
 }
