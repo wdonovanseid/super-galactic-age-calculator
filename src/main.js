@@ -60,16 +60,28 @@ function displayGalInfo(userGalAge) {
 
 function attachListeners() {
   $("button#merc").on("click", function() {
-    $("#merc-info").toggle()
+    $("#venus-info").hide();
+    $("#mars-info").hide();
+    $("#jup-info").hide();
+    $("#merc-info").toggle();
   });
   $("button#venus").on("click", function() {
-    $("#venus-info").toggle()
+    $("#merc-info").hide();
+    $("#mars-info").hide();
+    $("#jup-info").hide();
+    $("#venus-info").toggle();
   });
   $("button#mars").on("click", function() {
-    $("#mars-info").toggle()
+    $("#merc-info").hide();
+    $("#venus-info").hide();
+    $("#jup-info").hide();
+    $("#mars-info").toggle();
   });
   $("button#jup").on("click", function() {
-    $("#jup-info").toggle()
+    $("#merc-info").hide();
+    $("#venus-info").hide();
+    $("#mars-info").hide();
+    $("#jup-info").toggle();
   });
 }
 
@@ -81,9 +93,13 @@ $(document).ready(function() {
     const userDrink = $("input[name='user-drink']:checked").val();
     const userGender = $("input[name='user-gender']:checked").val();
     const userExercise = $("input[name='user-exercise']:checked").val();
-    let userGalAge = new GalacticAge(userAge,userDrink,userGender,userExercise);
-    userGalAge.calcAvg();
-    userGalAge.lifeLeft();
-    displayGalInfo(userGalAge);
+    if (!userAge || !userDrink || !userGender || !userExercise) {
+      alert("Enter in all your info before submitting please");
+    } else {
+      let userGalAge = new GalacticAge(userAge,userDrink,userGender,userExercise);
+      userGalAge.calcAvg();
+      userGalAge.lifeLeft();
+      displayGalInfo(userGalAge);
+    }
   });
 });

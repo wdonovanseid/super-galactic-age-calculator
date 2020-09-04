@@ -25,6 +25,13 @@ body {
   font-family: Times;
 }
 
-.card {
+.container {
   
+}
+
+.card {
+  background-color: black;
+  border: 5px solid white;
+  opacity: 0.6;
+  color: white;
 }
