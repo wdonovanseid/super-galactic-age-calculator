@@ -1,13 +1,39 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <title></title>
+  <title>Super Galactic Age Calculator</title>
 </head>
 <body>
   <div class="jumbotron">
-    <h1></h1>
+    <h1>Super Galatic Age Calculator</h1>
   </div>
   <div class="container">
+    <form id="user-info">
+      <div class="card">
+        <h4>Please enter your info</h4>
+        <label name="user-age">Age:</label>
+        <input type="number" id="user-age">
+        <div class="card">
+          <label name="user-gender">Gender:</label>
+          <label><input type="radio" name="user-gender" value="male"> Male</label>
+          <label><input type="radio" name="user-gender" value="female"> Female</label>
+          <label><input type="radio" name="user-gender" value="other"> Other</label>
+        </div>
+        <div class="card">
+          <label name="user-drink">Do you drink?:</label>
+          <label><input type="radio" name="user-drink" value="yes"> Yes</label>
+          <label><input type="radio" name="user-drink" value="no"> No</label>
+        </div>
+        <div class="card">
+          <label name="user-exercise">Do you exercise?:</label>
+          <label><input type="radio" name="user-exercise" value="yes"> Yes</label>
+          <label><input type="radio" name="user-exercise" value="no"> No</label>
+        </div>
+      </div>
+    </form>
+    <div id="output">
+      <p>You are <span id="merc-age"> Mercury years old</span></p>
+    </div>
 
   </div>
 </body>
