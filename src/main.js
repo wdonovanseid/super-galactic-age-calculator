@@ -6,21 +6,32 @@ import {GalacticAge} from './js/age-calculator';
 
 function displayGalInfo(userGalAge) {
   $("#output").show();
-  const planetArray=["mercAge","venusAge","marsAge","jupAge"];
-  planetArray.forEach(function(planetAge) {
-    $("#"+planetAge).text(userGalAge.planetAge);
-    if (userGalAge.planetAge+"Avg" < 0) {
-      $("#"+planetAge+"Avg").text("You have lived "+(-userGalAge.planetAge+"Avg")+" years past your life expectancy here.");
+  const planetArrayAge=["mercAge","venusAge","marsAge","jupAge"];
+  const planetArrayAgeAvg=["mercAgeAvg","venusAgeAvg","marsAgeAvg","jupAgeAvg"];
+  for (let i=0; i<4; i++) {
+    $("#"+planetArrayAge[i]).text(userGalAge.planetArrayAge[i]);
+    if (userGalAge.planetArrayAgeAvg[i] < 0) {
+      userGalAge.planetArrayAgeAvg[i] *= -1;
+      $("#"+planetArrayAgeAvg[i]).text("You have lived "+userGalAge.planetAgeAvg+" years past your life expectancy here.");
     } else {
-      $("#"+planetAge+"Avg").text("You have "+userGalAge+"."+planetAge+"Avg"+" years left to live.");
+      $("#"+planetArrayAgeAvg[i]).text("You have "+userGalAge.planetAgeAvg+" years left to live.");
     }
-  });
-  $("#mercAge").text(userGalAge.mercAge);
-  if (userGalAge.mercAgeAvg < 0) {
-    $("#merc-age-avg").text("You have lived "+(-userGalAge.mercAgeAvg)+" years past your life expectancy here.");
-  } else {
-    $("#merc-age-avg").text("You have "+userGalAge.mercAgeAvg+" years left to live.");
   }
+  // planetArray.forEach(function(planetAge) {
+  //   $("#"+planetAge).text(userGalAge.planetAge);
+  //   if (userGalAge.planetAge+"Avg" < 0) {
+  //     $("#"+planetAge+"Avg").text("You have lived "+(userGalAge.planetAge+"Avg")+" years past your life expectancy here.");
+  //   } else {
+  //     $("#"+planetAge+"Avg").text("You have "+userGalAge.planetAgeAvg+" years left to live.");
+  //   }
+  // });
+  // $("#merc-age").text(userGalAge.mercAge);
+  // if (userGalAge.mercAgeAvg > 0) {
+  //   userGalAge.mercAgeAvg;
+  //   $("#merc-age-avg").text("You have lived "+(-userGalAge.mercAgeAvg)+" years past your life expectancy here.");
+  // } else {
+  //   $("#merc-age-avg").text("You have "+userGalAge.mercAgeAvg+" years left to live.");
+  // }
 }
 
 $(document).ready(function() {
