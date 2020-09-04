@@ -32,26 +32,29 @@ function displayGalInfo(userGalAge) {
     // i++;
   // });
   $("#mercAge").text(userGalAge.mercAge);
-  console.log(userGalAge.mercAgeAvg)
   if (userGalAge.mercAgeAvg < 0) {
+    userGalAge.mercAgeAvg *= -1;
     $("#mercAgeAvg").text("You have lived "+userGalAge.mercAgeAvg+" years past your life expectancy here.");
   } else {
     $("#mercAgeAvg").text("You have "+userGalAge.mercAgeAvg+" years left to live.");
   }
   $("#venusAge").text(userGalAge.venusAge);
   if (userGalAge.venusAgeAvg < 0) {
+    userGalAge.venusAgeAvg *= -1;
     $("#venusAgeAvg").text("You have lived "+userGalAge.venusAgeAvg+" years past your life expectancy here.");
   } else {
     $("#venusAgeAvg").text("You have "+userGalAge.venusAgeAvg+" years left to live.");
   }
   $("#marsAge").text(userGalAge.marsAge);
   if (userGalAge.marsAgeAvg < 0) {
+    userGalAge.marsAgeAvg *= -1;
     $("#marsAgeAvg").text("You have lived "+userGalAge.marsAgeAvg+" years past your life expectancy here.");
   } else {
     $("#marsAgeAvg").text("You have "+userGalAge.marsAgeAvg+" years left to live.");
   }
   $("#jupAge").text(userGalAge.jupAge);
   if (userGalAge.jupAgeAvg < 0) {
+    userGalAge.jupAgeAvg *= -1;
     $("#jupAgeAvg").text("You have lived "+userGalAge.jupAgeAvg+" years past your life expectancy here.");
   } else {
     $("#jupAgeAvg").text("You have "+userGalAge.jupAgeAvg+" years left to live.");
@@ -61,14 +64,13 @@ function displayGalInfo(userGalAge) {
 $(document).ready(function() {
   $("form#user-info").submit(function(event) {
     event.preventDefault();
-    const userAge = $("input#user-age").val();
-    const userDrink = $("input[name='user-gender']:checked").val();
-    const userGender = $("input[name='user-drink']:checked").val();
+    const userAge = parseInt($("input#user-age").val());
+    const userDrink = $("input[name='user-drink']:checked").val();
+    const userGender = $("input[name='user-gender']:checked").val();
     const userExercise = $("input[name='user-exercise']:checked").val();
     let userGalAge = new GalacticAge(userAge,userDrink,userGender,userExercise);
     userGalAge.calcAvg();
     userGalAge.lifeLeft();
-    console.log(userGalAge)
     displayGalInfo(userGalAge);
   });
 });
