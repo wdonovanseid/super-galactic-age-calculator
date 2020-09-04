@@ -6,3 +6,25 @@ img {
   width: 25%;
   height: auto;
 }
+
+.jumbotron {
+  background-image: url(./../assets/images/jumbo-background.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  text-align: center;
+  color: black;
+}
+
+body {
+  background-image: url(./../assets/images/background.gif);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: black;
+  font-family: Times;
+}
+
+.card {
+  
+}
