@@ -58,7 +58,23 @@ function displayGalInfo(userGalAge) {
   }
 }
 
+function attachListeners() {
+  $("button#merc").on("click", function() {
+    $("#merc-info").toggle()
+  });
+  $("button#venus").on("click", function() {
+    $("#venus-info").toggle()
+  });
+  $("button#mars").on("click", function() {
+    $("#mars-info").toggle()
+  });
+  $("button#jup").on("click", function() {
+    $("#jup-info").toggle()
+  });
+}
+
 $(document).ready(function() {
+  attachListeners();
   $("form#user-info").submit(function(event) {
     event.preventDefault();
     const userAge = parseInt($("input#user-age").val());
