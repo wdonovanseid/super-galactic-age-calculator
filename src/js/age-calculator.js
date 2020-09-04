@@ -9,6 +9,10 @@ export class GalacticAge {
     this.userDrink = userDrink;
     this.userGender = userGender;
     this.userExercise = userExercise;
+    this.mercAgeAvg;
+    this.venusAgeAvg;
+    this.marsAgeAvg;
+    this.jupAgeAvg;
   }
 
   calcAvg() {
@@ -28,5 +32,12 @@ export class GalacticAge {
       this.userAvg *= 0.7;
     }
     this.userAvg = Math.round(this.userAvg);
+  }
+
+  lifeLeft() {
+    this.mercAgeAvg = this.userAvg - this.mercAge;
+    this.venusAgeAvg = this.userAvg - this.venusAge;
+    this.marsAgeAvg = this.userAvg - this.marsAge;
+    this.jupAgeAvg = this.userAvg - this.jupAge;
   }
 }
