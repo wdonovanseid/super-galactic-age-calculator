@@ -21,7 +21,8 @@ If a user has already surpassed the average life expectancy, return the number o
 
 * _Copy Repository_
 * _Run npm install_
-* _Run npm start_
+* _Run npm build_
+* _Open dist/index.html in your web browser_
 
 ## Known Bugs
 

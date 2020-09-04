@@ -6,34 +6,44 @@ import {GalacticAge} from './js/age-calculator';
 
 function displayGalInfo(userGalAge) {
   $("#output").show();
-  $("#mercAge").text(userGalAge.mercAge);
-  if (userGalAge.mercAgeAvg < 0) {
-    userGalAge.mercAgeAvg *= -1;
-    $("#mercAgeAvg").text(`You have lived ${userGalAge.mercAgeAvg} years past your life expectancy here.`);
-  } else {
-    $("#mercAgeAvg").text(`You have ${userGalAge.mercAgeAvg} years left to live.`);
+  const picked = (({mercAge,venusAge,marsAge,jupAge}) => ({mercAge,venusAge,marsAge,jupAge}))(userGalAge);
+  for (let key in picked) {
+    $("#"+key).text(picked[key]);
+    if (picked[key+"Avg"] < 0) {
+      picked[key+"Avg"] *= -1;
+      $("#"+key+"Avg").text(`You have lived ${picked[key+"Avg"]} years past your life expectancy here.`);
+    } else {
+      $("#"+key+"Avg").text(`You have ${picked[key+"Avg"]} years left to live.`);
+    }
   }
-  $("#venusAge").text(userGalAge.venusAge);
-  if (userGalAge.venusAgeAvg < 0) {
-    userGalAge.venusAgeAvg *= -1;
-    $("#venusAgeAvg").text(`You have lived ${userGalAge.venusAgeAvg} years past your life expectancy here.`);
-  } else {
-    $("#venusAgeAvg").text(`You have ${userGalAge.venusAgeAvg} years left to live.`);
-  }
-  $("#marsAge").text(userGalAge.marsAge);
-  if (userGalAge.marsAgeAvg < 0) {
-    userGalAge.marsAgeAvg *= -1;
-    $("#marsAgeAvg").text(`You have lived ${userGalAge.marsAgeAvg} years past your life expectancy here.`);
-  } else {
-    $("#marsAgeAvg").text(`You have ${userGalAge.marsAgeAvg} years left to live.`);
-  }
-  $("#jupAge").text(userGalAge.jupAge);
-  if (userGalAge.jupAgeAvg < 0) {
-    userGalAge.jupAgeAvg *= -1;
-    $("#jupAgeAvg").text(`You have lived ${userGalAge.jupAgeAvg} years past your life expectancy here.`);
-  } else {
-    $("#jupAgeAvg").text(`You have ${userGalAge.jupAgeAvg} years left to live.`);
-  }
+  // $("#mercAge").text(userGalAge.mercAge);
+  // if (userGalAge.mercAgeAvg < 0) {
+  //   userGalAge.mercAgeAvg *= -1;
+  //   $("#mercAgeAvg").text(`You have lived ${userGalAge.mercAgeAvg} years past your life expectancy here.`);
+  // } else {
+  //   $("#mercAgeAvg").text(`You have ${userGalAge.mercAgeAvg} years left to live.`);
+  // }
+  // $("#venusAge").text(userGalAge.venusAge);
+  // if (userGalAge.venusAgeAvg < 0) {
+  //   userGalAge.venusAgeAvg *= -1;
+  //   $("#venusAgeAvg").text(`You have lived ${userGalAge.venusAgeAvg} years past your life expectancy here.`);
+  // } else {
+  //   $("#venusAgeAvg").text(`You have ${userGalAge.venusAgeAvg} years left to live.`);
+  // }
+  // $("#marsAge").text(userGalAge.marsAge);
+  // if (userGalAge.marsAgeAvg < 0) {
+  //   userGalAge.marsAgeAvg *= -1;
+  //   $("#marsAgeAvg").text(`You have lived ${userGalAge.marsAgeAvg} years past your life expectancy here.`);
+  // } else {
+  //   $("#marsAgeAvg").text(`You have ${userGalAge.marsAgeAvg} years left to live.`);
+  // }
+  // $("#jupAge").text(userGalAge.jupAge);
+  // if (userGalAge.jupAgeAvg < 0) {
+  //   userGalAge.jupAgeAvg *= -1;
+  //   $("#jupAgeAvg").text(`You have lived ${userGalAge.jupAgeAvg} years past your life expectancy here.`);
+  // } else {
+  //   $("#jupAgeAvg").text(`You have ${userGalAge.jupAgeAvg} years left to live.`);
+  // }
   $("#mayflyAge").text(userGalAge.mayflyAge);
 }
 
