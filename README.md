@@ -20,7 +20,8 @@ If a user has already surpassed the average life expectancy, return the number o
 ## Setup/Installation Requirements
 
 * _Copy Repository_
-* _Open index.html in your web browser_
+* _Run npm install_
+* _Run npm start_
 
 ## Known Bugs
 
