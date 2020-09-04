@@ -28,10 +28,16 @@ describe('GalacticAge', ()=> {
     expect(galAge.userAvg).toEqual(42)
   });
 
-  test('should determine users life expectancy', ()=> {
-    let galAge2 = new GalacticAge(33,"no","female","no")
+  test('should determine users life expectancy (other branches)', ()=> {
+    let galAge2 = new GalacticAge(4,"no","female","no")
     galAge2.calcAvg();
-    expect(galAge2.userAvg).toEqual(42)
+    expect(galAge2.userAvg).toEqual(61)
+  });
+
+  test('should determine users life expectancy (other branches)', ()=> {
+    let galAge2 = new GalacticAge(70,"no","other","yes")
+    galAge2.calcAvg();
+    expect(galAge2.userAvg).toEqual(108)
   });
 
   test('should determine how many earth years a user has to live on each planet', ()=> {
